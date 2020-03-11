@@ -10,8 +10,11 @@ router.get('/', (req, res) => {
 
 router.get('/send_message', (req, res) => {
   console.log(`The message sended from the frontend is ${req.param('message').yellow.bold}`.blue.bold)
-
   res.redirect('/?success_message=true');
+})
+
+router.get('/app', (req, res) => {
+  res.sendFile(path.join(__dirname, '../views/routes/js/app.js'));
 })
 
 router.get('/favicon.ico', (req, res) => {
